@@ -26,43 +26,42 @@ namespace Paypaltillidtest
                 string query = string.Format("cmd=_notify-synch&tx={0}&at={1}",
                                       txToken, authToken);
 
-                // Create the request back
+                Label1.Text = txToken;
+                Label2.Text = authToken;
+
+               /*
                 string url = "https://sandbox.paypal.com/cgi-bin/webscr";
                 HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
 
-                // Set values for the request back
+               
                 req.Method = "POST";
                 req.ContentType = "application/x-www-form-urlencoded";
                 req.ContentLength = query.Length;
 
-                // Write the request back IPN strings
+               
                 StreamWriter stOut = new StreamWriter(req.GetRequestStream(),
                                          System.Text.Encoding.ASCII);
                 stOut.Write(query);
                 stOut.Close();
 
-                // Do the request to PayPal and get the response
+               
                 StreamReader stIn = new StreamReader(req.GetResponse().GetResponseStream());
                 string strResponse = stIn.ReadToEnd();
                 stIn.Close();
 
-                // sanity check
+               
                 Label2.Text = strResponse;
 
-                // If response was SUCCESS, parse response string and output details
+               
                 if (strResponse.StartsWith("SUCCESS"))
                 {
-                   /* PDTHolder pdt = PDTHolder.Parse(strResponse);
-                    Label1.Text =
-                        string.Format("Thank you {0} {1} [{2}] for your payment of {3} {4}!",
-                        pdt.PayerFirstName, pdt.PayerLastName,
-                        pdt.PayerEmail, pdt.GrossTotal, pdt.Currency);*/
+                  
                     Label1.Text = strResponse;
                 }
                 else
                 {
                     Label1.Text = "Oooops, something went wrong...";
-                }
+                }*/
             }
         }
     }
