@@ -47,7 +47,7 @@ namespace Paypaltillidtest
                 stOut.Close();
 
                
-               /* StreamReader stIn = new StreamReader(req.GetResponse().GetResponseStream());
+                StreamReader stIn = new StreamReader(req.GetResponse().GetResponseStream());
                 string strResponse = stIn.ReadToEnd();
                 stIn.Close();
 
@@ -63,7 +63,7 @@ namespace Paypaltillidtest
                 else
                 {
                     Label1.Text = "Oooops, something went wrong...";
-                }*/
+                }
             }
         }
     }
