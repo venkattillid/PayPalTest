@@ -29,7 +29,7 @@ namespace Paypaltillidtest
                 Label1.Text = txToken;
                 Label2.Text = authToken;
 
-               /*
+               
                 string url = "https://sandbox.paypal.com/cgi-bin/webscr";
                 HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
 
@@ -45,7 +45,7 @@ namespace Paypaltillidtest
                 stOut.Close();
 
                
-                StreamReader stIn = new StreamReader(req.GetResponse().GetResponseStream());
+               /* StreamReader stIn = new StreamReader(req.GetResponse().GetResponseStream());
                 string strResponse = stIn.ReadToEnd();
                 stIn.Close();
 
