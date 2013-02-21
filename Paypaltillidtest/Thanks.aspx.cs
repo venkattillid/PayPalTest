@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Linq;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Web;
 using System.Web.UI;
@@ -29,7 +31,7 @@ namespace Paypaltillidtest
                 Label1.Text = txToken;
                 Label2.Text = authToken;
 
-               
+             
                 string url = "https://sandbox.paypal.com/cgi-bin/webscr";
                 HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
 
