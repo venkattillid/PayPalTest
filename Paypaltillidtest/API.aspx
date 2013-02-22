@@ -7,8 +7,7 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
+   
     <form id="form2" runat="server">
     <div>
     
@@ -20,7 +19,6 @@
     </div>
     
     </form>
-    </div>
-    </form>
+   
 </body>
 </html>
