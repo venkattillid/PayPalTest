@@ -40,11 +40,12 @@ namespace Paypaltillidtest
             string strResponse = streamIn.ReadToEnd();
             streamIn.Close();
 
+            Response.Write(strResponse);
             // logging ipn messages... be sure that you give write permission to process executing this code
-            string logPathDir = ResolveUrl("Messages");
+          /*  string logPathDir = ResolveUrl("Messages");
             string logPath = string.Format("{0}\\{1}.txt", Server.MapPath(logPathDir), DateTime.Now.Ticks);
             File.WriteAllText(logPath, ipnPost);
-            //
+            //*/
 
             if (strResponse == "VERIFIED")
             {
