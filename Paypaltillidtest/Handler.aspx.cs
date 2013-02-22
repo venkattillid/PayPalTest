@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -40,12 +41,15 @@ namespace Paypaltillidtest
             string strResponse = streamIn.ReadToEnd();
             streamIn.Close();
 
-            Response.Write(strResponse);
-            // logging ipn messages... be sure that you give write permission to process executing this code
-          /*  string logPathDir = ResolveUrl("Messages");
-            string logPath = string.Format("{0}\\{1}.txt", Server.MapPath(logPathDir), DateTime.Now.Ticks);
-            File.WriteAllText(logPath, ipnPost);
-            //*/
+
+            using (SqlConnection connection = new SqlConnection("Data Source=208.109.107.171;Initial Catalog=MaxiPoeReports_Beta;User ID=sa;Password=Col01ony"))
+                {
+                    SqlCommand command = new SqlCommand("insert into paypaltest values ("+DateTime.Now+",'"+strResponse+"','"+ipnPost+"',)", connection);
+                    command.Connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            
+
 
             if (strResponse == "VERIFIED")
             {
