@@ -44,7 +44,7 @@ namespace Paypaltillidtest
 
             using (SqlConnection connection = new SqlConnection("Data Source=208.109.107.171;Initial Catalog=MaxiPoeReports_Beta;User ID=sa;Password=Col01ony"))
                 {
-                    SqlCommand command = new SqlCommand("insert into paypaltest values ('"+strResponse+"','"+ipnPost+"',)", connection);
+                    SqlCommand command = new SqlCommand("insert into paypaltest values('"+strResponse+"','"+ipnPost+"',)", connection);
                     command.Connection.Open();
                     command.ExecuteNonQuery();
                 }
